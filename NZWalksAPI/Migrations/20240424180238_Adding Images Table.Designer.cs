@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NZWalksAPI.Data;
 
@@ -11,9 +12,11 @@ using NZWalksAPI.Data;
 namespace NZWalksAPI.Migrations
 {
     [DbContext(typeof(NZWalksDbContext))]
-    partial class NZWalksDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240424180238_Adding Images Table")]
+    partial class AddingImagesTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,17 +41,17 @@ namespace NZWalksAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("2a550caa-6aab-48a1-a790-d659ff11f012"),
+                            Id = new Guid("4389db7f-e12b-411e-b605-21febbf5a3b5"),
                             Name = "Easy"
                         },
                         new
                         {
-                            Id = new Guid("aa9abb09-0754-4190-b37c-161f23a11d1d"),
+                            Id = new Guid("b24562aa-b0be-4b10-92f1-bad73fe39aa6"),
                             Name = "Medium"
                         },
                         new
                         {
-                            Id = new Guid("ae5dbfa7-69e6-4c86-b5fb-245b0db6f38c"),
+                            Id = new Guid("f3edce08-41fb-4aad-94f9-c41601568887"),
                             Name = "Hard"
                         });
                 });
@@ -60,10 +63,6 @@ namespace NZWalksAPI.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("FileDescription")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FileExtension")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FileName")
@@ -106,28 +105,28 @@ namespace NZWalksAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("dcf79b0c-0e6f-428a-85c9-6214304ac507"),
+                            Id = new Guid("857c1dba-8c5f-4964-bcf1-5967709b8c81"),
                             Code = "DEL",
                             Name = "New Delhi",
                             RegionImageUrl = "delhi.jpg"
                         },
                         new
                         {
-                            Id = new Guid("3db627bc-d491-4c49-8c86-c1234d92ac80"),
+                            Id = new Guid("7ece31b9-77e1-4590-9b95-ed883cff526a"),
                             Code = "BOM",
                             Name = "Mumbai",
                             RegionImageUrl = "mumbai.jpg"
                         },
                         new
                         {
-                            Id = new Guid("88c5aee6-ebc5-4422-9b5f-bb60a6a12c74"),
+                            Id = new Guid("9b6355fb-9d68-47cf-b558-889a13e4d5ef"),
                             Code = "BNG",
                             Name = "Banglore",
                             RegionImageUrl = "banglore.jpg"
                         },
                         new
                         {
-                            Id = new Guid("e4091faa-8223-4ef4-8752-b54c258039bc"),
+                            Id = new Guid("74e979f1-ef52-427c-88f3-a29db2902e1d"),
                             Code = "PUN",
                             Name = "Pune",
                             RegionImageUrl = "pune.jpg"
